@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  namespace: myapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+      release: stable
+  template:
+    metadata:
+      labels:
+        app: myapp
+        namespace: myapp
+        release: stable
+    spec:
+      containers:
+      - name: myapp
+        image: myapp
+        restartPolicy: OnFailure
+        # imagePullPolicy: IfNotPresent
+        # resources:
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "500m"
+        # livenessProbe:
+        #   httpGet:
+        #     path: /status
+        #     port: 8080
+        # readinessProbe:
+        #   httpGet:
+        #     path: /status
+        #     port: 8080

@@ -1,0 +1,6 @@
+*
+
+!apps/myapp/**/*.go
+
+!go.mod
+!go.sum

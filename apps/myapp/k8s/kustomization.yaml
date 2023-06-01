@@ -1,0 +1,11 @@
+namespace: myapp
+commonLabels:
+  app: myapp
+resources:
+  - namespace.yaml
+  - deployment.yaml
+
+
+images:
+  - name: deviceservice
+    newName: deviceservice
